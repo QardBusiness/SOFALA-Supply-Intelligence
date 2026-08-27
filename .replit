@@ -1,6 +1,4 @@
 modules = ["nodejs-24"]
-buildCommand = "npm run build"
-runCommand = "npm start"
 
 [[ports]]
 localPort = 3000
@@ -24,8 +22,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm start"
+args = "node server.js"
 waitForPort = 3000
 
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[deployment]
+deploymentTarget = "autoscale"
+buildCommand = "echo 'Vanilla JS'"
+runCommand = "node server.js"
+run = ["node", "server.js"]
+build = ["echo", "'Vanilla JS'"]
