@@ -7,7 +7,7 @@ import { suppliers, inventory, orders, alerts, monthlyStats } from './data.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
-const PORT = 5000;
+const PORT = Number(process.env.PORT || 3000);
 
 app.use(cors());
 app.use(express.json());
