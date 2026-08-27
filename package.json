@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "echo 'No build required for Vanilla JS'"
   },
   "dependencies": {
     "cors": "^2.8.5",
